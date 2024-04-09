@@ -3,7 +3,7 @@
 #### Required Set up
 - Spring Boot 3.2.4+
 - Spring Security 6+
-- Java 8, 11, 17+ (⭐better to user 17)
+- Java 8, 11, 17+ (⭐better to use 17)
 - MySQL 5.7+
 
 ### Steps to Completed 
