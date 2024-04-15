@@ -77,3 +77,7 @@ Then scroll down and give **Developer contact information** like **Email address
 **Step 14:** Otherwise, you can collect later by going inside of your **OAuth 2.0 Client IDs (Web client 1)**
 
 ![image](https://github.com/nirmalakumarsahu/spring-boot-oauth2.0-google/assets/62144558/5d1269c4-e7ba-470a-9bee-de86761ba91f)
+
+## 2. Use the code
+
+- Now use the above code and change the **Client ID** and **Client Secret** and if you want to add **SSL** add and run the application.
