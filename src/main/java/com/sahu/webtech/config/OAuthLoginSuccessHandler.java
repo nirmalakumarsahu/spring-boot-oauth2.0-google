@@ -9,6 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
+import com.sahu.webtech.model.User;
 import com.sahu.webtech.security.CustomOAuth2UserDTO;
 import com.sahu.webtech.service.UserService;
 
@@ -29,7 +30,10 @@ public class OAuthLoginSuccessHandler extends SavedRequestAwareAuthenticationSuc
 			Authentication authentication) throws ServletException, IOException {
 		LOGGER.debug("Inside onAuthenticationSuccess() method");
 		CustomOAuth2UserDTO oauth2User = (CustomOAuth2UserDTO) authentication.getPrincipal();
-		userService.oAuthPostLoginProcess(oauth2User);
+		User optUser = userService.findByEmail(oauth2User.getEmail());
+		if (optUser == null) {
+			userService.oAuthPostLoginProcess(oauth2User);
+		}
 
 		response.sendRedirect("/client/user/dashboard");
 	}
